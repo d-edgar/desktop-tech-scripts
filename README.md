@@ -16,6 +16,12 @@ Collection of various scripts for macOS and Windows, I will include a To-Do list
 |  Soon:tm:   |jamf config profiles and scripts|
 
  </details>
+ 
+ <details>
+ <summary>Software to DOWNLOAD NOW</summary>
+ * https://github.com/ProfileCreator/ProfileCreator.git
+ * https://github.com/notepad-plus-plus/notepad-plus-plus
+ </details>
 
 
 # Windows OS Commands/Scripts/Anything

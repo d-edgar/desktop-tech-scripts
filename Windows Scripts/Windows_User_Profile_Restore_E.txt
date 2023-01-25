@@ -1,0 +1,43 @@
+@echo off
+REM ##################################################
+REM Windows User Profile restore script
+REM version="1.1.1"
+REM ##################################################
+REM HISTORY:
+REM v.1.1.0 - Added option to move past file errors
+REM v.1.1.0 - Added logging
+REM
+REM Last modified:
+REM 7/24/19
+REM ##################################################
+
+SET /p user=Enter User ID:
+SET backup_source="E:\User Profile Backups\Profiles"\%user%\
+SET restore_dest=C:\Users\%user%
+SET restore_public=C:\Users\Public\%user%
+
+echo Getting New Hostname...
+timeout /t 1 /nobreak>nul
+hostname >> %backup_source%\NewComputerName.txt
+echo Done!
+timeout /t 1 /nobreak>nul
+
+REM Put the thing down, flip it, and reverse it
+echo Starting Profile Restore...
+timeout /t 1 /nobreak>nul
+IF EXIST %restore_dest% (
+robocopy /E /R:0 /V /COPY /LOG:C:\temp\profile_restore_log.txt /NP %backup_source% %restore_dest%
+) ELSE (
+robocopy /E /R:0 /V /COPY /LOG:C:\temp\profile_restore_log.txt /NP %backup_source% %restore_public%
+)
+
+echo Archiving Files...
+timeout /t 1 /nobreak>nul
+powershell -command "& {&'Compress-Archive' ""E:\User Profile Backups\Profiles\%user%\"" ""E:\User Profile Backups\Archive\%user%.zip\"}"
+
+echo Cleaning Up...
+timeout /t 1 /nobreak>nul
+rmdir /s /Q "E:\User Profile Backups\Profiles\%user%\"
+echo Done!
+echo Profile Restore Complete!
+timeout /t 1 /nobreak>nul
