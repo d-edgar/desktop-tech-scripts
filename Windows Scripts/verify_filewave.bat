@@ -1,1 +1,0 @@
-"C:\Program Files (x86)\FileWave\fwGUI.exe" --verify --silent
