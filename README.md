@@ -19,8 +19,10 @@ Collection of various scripts for macOS and Windows, I will include a To-Do list
  
  <details>
  <summary>Software to DOWNLOAD NOW</summary>
- * https://github.com/ProfileCreator/ProfileCreator.git
- * https://github.com/notepad-plus-plus/notepad-plus-plus
+ 
+ - https://github.com/ProfileCreator/ProfileCreator.git
+ - https://github.com/notepad-plus-plus/notepad-plus-plus
+ 
  </details>
 
 
