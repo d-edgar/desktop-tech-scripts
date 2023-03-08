@@ -127,6 +127,11 @@ Run rmdir /? for more help.
 # macOS Commands/Scripts
 Collection of various things I have used over the years for the macOS specific operating system.
 
+### Remove default applications remotely and scripted
+```
+sudo rm -rf /Applications/Mail.appz*
+```
+
 ### Mobile account delete[^8]
 Deletes mobile accounts after a local account has been migrated.
 *
